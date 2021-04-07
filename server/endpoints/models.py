@@ -1,3 +1,36 @@
 from django.db import models
 
-# Create your models here.
+class User(models.Model):
+    fname = models.CharField(max_length=50)
+    lname = models.CharField(max_length=50, blank=True, null=True)
+    mail = models.EmailField(max_length=254)
+    contact_number = models.CharField(max_length=20)
+
+    def __str__(self):
+        return self.fname + " " + self.lname
+
+
+class Event(models.Model):
+    prize = models.CharField(max_length=100)
+    winner = models.ForeignKey(User,on_delete=models.CASCADE,null=True, blank=True)
+    date = models.DateTimeField()
+
+    def __str__(self):
+        return self.prize
+
+
+class Ticket(models.Model):
+    user = models.ForeignKey(User,on_delete=models.CASCADE)
+    count = models.IntegerField(default=0)
+
+    def __str__(self):
+        return self.user
+        
+    
+class Participant(models.Model):
+    event = models.ForeignKey(Event, on_delete=models.CASCADE)  
+    ticket = models.ForeignKey(Ticket, on_delete=models.CASCADE)
+
+    class Meta:
+        verbose_name = 'Participant'
+        verbose_name_plural = 'Participants'
