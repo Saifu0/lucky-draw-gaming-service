@@ -19,7 +19,7 @@ import random
 
 class TicketView(APIView):
     '''
-        This API view will allows user to get raffle tickets.
+        This API view will allow the users to get raffle tickets.
         By default, it will assign 2 tickets to a user but user can ask
         for more than 2 not greater than 5 tickets at a time.
 
@@ -67,6 +67,8 @@ class TicketView(APIView):
         return ticket
 
 
+
+
 class UpcomingEventListView(ListAPIView):
     '''
         GET method for getting list of Upcoming events
@@ -77,6 +79,8 @@ class UpcomingEventListView(ListAPIView):
         queryset = Event.objects.filter(date__gte=datetime.now(timezone.utc))
         return queryset
     
+
+
 
 class EventParticipationView(APIView):
     '''
@@ -137,6 +141,8 @@ class EventParticipationView(APIView):
         }, status = HTTP_201_CREATED)
 
 
+
+
 class LastWeekWinnersView(APIView):
     '''
         This API view will allow users to fetch winner of all the events in the last one week.
@@ -151,6 +157,9 @@ class LastWeekWinnersView(APIView):
     def get_last_week_date(self):
         date = datetime.now(timezone.utc) - timedelta(days=7)
         return date
+
+
+
 
 class EventWinner(APIView):
     '''
