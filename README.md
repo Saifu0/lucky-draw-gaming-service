@@ -20,6 +20,11 @@ python manage.py runserver
 # API Documentation and automated testing 
 Once the development server is up and running then you can visit http://127.0.0.1:8000/swagger/ to see API documentation.
 
+###### Models and Views(API) automated testing
+```
+python manage.py test
+```
+
 ## Endpoints response screenshots
 
 1. GET method: Getting tickets for a user ( By default : 2 Tickets ) 
