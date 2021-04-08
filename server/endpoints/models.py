@@ -1,7 +1,7 @@
 from django.db import models
 
 class User(models.Model):
-    fname = models.CharField(max_length=50, help_text="First name of the user")
+    fname = models.CharField(max_length=50)
     lname = models.CharField(max_length=50)
     mail = models.EmailField(max_length=254)
     contact_number = models.CharField(max_length=20)
@@ -12,8 +12,8 @@ class User(models.Model):
 
 class Event(models.Model):
     prize = models.CharField(max_length=100, help_text="Prize of the event")
-    winner = models.ForeignKey(User,on_delete=models.CASCADE,null=True, blank=True)
-    date = models.DateTimeField()
+    winner = models.ForeignKey(User,on_delete=models.CASCADE,null=True, blank=True, help_text='Winner of this event. Can be null or empty')
+    date = models.DateTimeField(help_text="Date of event")
 
     def __str__(self):
         return self.prize

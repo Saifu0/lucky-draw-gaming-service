@@ -3,6 +3,9 @@ from endpoints.models import User, Event, Ticket, Participant
 from datetime import datetime
 
 class UserModelTest(TestCase):
+    '''
+        Testing User model
+    '''
     @classmethod
     def setUpTestData(cls):
         User.objects.create(
@@ -34,6 +37,9 @@ class UserModelTest(TestCase):
 
 
 class EventModelTest(TestCase):
+    '''
+        Testing Event model
+    '''
     @classmethod
     def setUpTestData(cls):
         User.objects.create(
@@ -66,6 +72,9 @@ class EventModelTest(TestCase):
 
 
 class TicketModelTest(TestCase):
+    '''
+        Testing Ticket model
+    '''
     @classmethod
     def setUpTestData(cls):
         User.objects.create(
@@ -92,6 +101,9 @@ class TicketModelTest(TestCase):
 
 
 class ParticipantModelTest(TestCase):
+    '''
+        Testing Participant model
+    '''
     @classmethod
     def setUpTestData(cls):
         User.objects.create(

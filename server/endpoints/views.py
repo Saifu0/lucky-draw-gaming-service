@@ -127,8 +127,8 @@ class EventParticipationView(APIView):
 
         if Participant.objects.filter(ticket=ticket,event=event).count() > 0:
             return Response({
-                "error" : "Already participated!" 
-            }, status = HTTP_400_BAD_REQUEST)
+                "success" : "Already participated!" 
+            }, status = HTTP_200_OK)
         
         participate = Participant(ticket=ticket,event=event)
         participate.save()
