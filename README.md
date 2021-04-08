@@ -17,6 +17,10 @@ python manage.py runserver
 ```
 * Open `127.0.0.1:8000` into the browser to see things in action
 
+# Database Schema and relationships
+![Screenshot (9)](https://user-images.githubusercontent.com/43892879/113990243-e0c89b80-986e-11eb-828b-3c7e9c8a0579.png)
+
+
 # API Documentation and automated testing 
 Once the development server is up and running then you can visit http://127.0.0.1:8000/swagger/ to see API documentation.
 
